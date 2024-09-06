@@ -62,7 +62,7 @@ public class DiceManager : MonoBehaviour
             HandleDieRelease();
         }
     }
-
+    
     private void FixedUpdate()
     {
         HandleDieDrag();
@@ -76,7 +76,6 @@ public class DiceManager : MonoBehaviour
         if (!Physics.Raycast(mousePointRay, out var hit)) return;
         
         var hitObject = hit.collider.gameObject;
-
         var hitDieData = _diceList.FirstOrDefault(dieData => dieData.Die == hitObject);
         
         if (!hitDieData.Die) return;
